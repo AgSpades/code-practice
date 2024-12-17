@@ -5,7 +5,7 @@ Sites include:
 
 - codeforces
 - codechef
-- leetcode
+- (leetcode)[https://leetcode.com]
 - atcoder
 
 The daily logs folder will include some random rants.
