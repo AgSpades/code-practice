@@ -1,1 +1,11 @@
-This is just for practice...
+# Code Practice
+
+A repo containing the CP problems I have solved so far.
+Sites include:
+
+- codeforces
+- codechef
+- leetcode
+- atcoder
+
+The daily logs folder will include some random rants.
