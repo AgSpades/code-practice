@@ -17,13 +17,21 @@ const ll INF = 1e18;
 
 void solve()
 {
+    string s;
+    cin >> s;
+    if(isupper(s[0])){
+        cout << s;
+        return;
+    }
+    s[0] = toupper(s[0]);
+    cout << s;
 }
 
 int main()
 {
     fastio;
     int t = 1;
-    cin >> t;
+    //cin >> t;
     while (t--)
     {
         solve();
