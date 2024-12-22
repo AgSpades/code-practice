@@ -1,4 +1,9 @@
-/*Om Namo Narayana~*/
+/*
+Om Namo Narayana~
+author: agspades
+year of code: 2024
+template version: 0.1
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
