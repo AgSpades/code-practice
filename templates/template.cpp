@@ -1,8 +1,8 @@
 /*
-Om Namo Narayana~
+Jai Bajrangbali!
 author: agspades
-year of code: 2024
-template version: 0.1
+year of code: 2025
+template version: 0.1.1
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -14,6 +14,7 @@ using namespace std;
 #define ll long long
 #define pb push_back
 #define vi vector<int>
+#define vvi vector<vector<int>>
 #define all(x) (x).begin(), (x).end()
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
