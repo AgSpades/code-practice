@@ -21,7 +21,7 @@ using namespace std;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
 
-void solve()
+inline void solve()
 {
 }
 
