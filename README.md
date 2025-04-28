@@ -8,5 +8,6 @@ Sites include:
 - atcoder
 - cses problem set
 - open kattis
+- uva online judge
 
 The daily logs folder will include some random rants.
