@@ -7,5 +7,6 @@ Sites include:
 - codechef
 - atcoder
 - cses problem set
+- open kattis
 
 The daily logs folder will include some random rants.
