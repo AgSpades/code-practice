@@ -1,4 +1,9 @@
-/*Om Namo Narayana~*/
+/*
+Jai Bajrangbali!
+author: agspades
+year of code: 2025
+template version: 0.1.1
+*/
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -9,28 +14,32 @@ using namespace std;
 #define ll long long
 #define pb push_back
 #define vi vector<int>
+#define vvi vector<vector<int>>
 #define all(x) (x).begin(), (x).end()
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 
 const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
 
-void solve()
+inline void solve()
 {
     string s;
     cin >> s;
-    ll ans =1, cnt = 1;
-    FOR(i, 1, s.size()){
-        if(s[i] == s[i-1]){
-            cnt++;
-            
+    int curr_len = 1, max_len = 1;
+    for (int i = 1; i < s.length(); i++)
+    {
+        if (s[i] == s[i - 1])
+        {
+            curr_len++;
         }
-        else{
-            cnt = 1;
+        else
+        {
+            curr_len = 1;
         }
-        ans = max(ans, cnt);
+        max_len = max(curr_len, max_len);
     }
-    cout << ans;
+
+    cout << max_len;
 }
 
 int main()
