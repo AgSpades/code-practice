@@ -21,11 +21,12 @@ using namespace std;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
 
-void solve()
+inline void solve()
 {
-    ll n, c = 0;
+    ll n;
     cin >> n;
-    vector<int> arr(n);
+    ll diff, total_inc = 0;
+    vector<ll> arr(n);
     FOR(i, 0, n)
     {
         cin >> arr[i];
@@ -35,12 +36,13 @@ void solve()
     {
         if (arr[i] < arr[i - 1])
         {
-            c += arr[i - 1] - arr[i];
+            diff = arr[i - 1] - arr[i];
+            total_inc += diff;
             arr[i] = arr[i - 1];
         }
     }
 
-    cout << c << '\n';
+    cout << total_inc;
 }
 
 int main()
