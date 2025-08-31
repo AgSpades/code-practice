@@ -17,24 +17,28 @@ using namespace std;
 #define vvi vector<vector<int>>
 #define all(x) (x).begin(), (x).end()
 #define FOR(i, a, b) for (int i = a; i < b; i++)
-template <typename T>
-using min_heap = std::priority_queue<T, std::vector<T>, std::greater<T>>;
 
 const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
 
 inline void solve()
 {
+    int n;
+    cin >> n;
+    vector<string> names(n);
+    for (int i = 0; i < n; i++)
+    {
+        cin >> names[i];
+    }
+    int x;
+    string y;
+    cin >> x >> y;
+    names[x - 1] == y ? cout << "Yes\n" : cout << "No\n";
 }
 
 int main()
 {
     fastio;
-    int t = 1;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+    solve();
     return 0;
 }

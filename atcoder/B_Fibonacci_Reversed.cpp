@@ -17,24 +17,39 @@ using namespace std;
 #define vvi vector<vector<int>>
 #define all(x) (x).begin(), (x).end()
 #define FOR(i, a, b) for (int i = a; i < b; i++)
-template <typename T>
-using min_heap = std::priority_queue<T, std::vector<T>, std::greater<T>>;
 
 const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
 
+ll rev(int n)
+{
+    ll ans = 0;
+    while (n != 0)
+    {
+        ans = ans * 10 + n % 10;
+        n /= 10;
+    }
+    return ans;
+}
+
 inline void solve()
 {
+    ll x, y;
+    cin >> x >> y;
+    ll temp = 0;
+    for (int i = 0; i < 8; i++)
+    {
+        temp = rev(x + y);
+        x = y;
+        y = temp;
+    }
+
+    cout << temp << '\n';
 }
 
 int main()
 {
     fastio;
-    int t = 1;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+    solve();
     return 0;
 }
