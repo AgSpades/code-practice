@@ -1,6 +1,6 @@
 /*
 Jai Bajrangbali!
-template_author: agspades
+author: agspades
 year of code: 2025
 template version: 0.1.1
 */
@@ -25,16 +25,28 @@ const ll INF = 1e18;
 
 inline void solve()
 {
+    int t;
+    cin >> t;
+    unordered_map<string, int> ph;
+    string temp;
+    int c = 0;
+    ph["Tetrahedron"] = 4;
+    ph["Cube"] = 6;
+    ph["Octahedron"] = 8;
+    ph["Dodecahedron"] = 12;
+    ph["Icosahedron"] = 20;
+    while (t--)
+    {
+        cin >> temp;
+        c += ph[temp];
+    }
+
+    cout << c << '\n';
 }
 
 int main()
 {
     fastio;
-    int t = 1;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+    solve();
     return 0;
 }
