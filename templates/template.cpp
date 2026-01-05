@@ -1,7 +1,7 @@
 /*
 Jai Bajrangbali!
 template_author: agspades
-year of code: 2025
+year of code: 2026
 template version: 0.1.2
 */
 #include <bits/stdc++.h>
