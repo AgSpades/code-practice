@@ -81,44 +81,33 @@ class Solution
 public:
     vector<int> asteroidCollision(vector<int> &asteroids)
     {
-        stack<int> fs;
-
+        vector<int> res;
         for (int asteroid : asteroids)
         {
             bool boom = false;
-            while (!fs.empty() && fs.top() > 0 && asteroid < 0) // explodes only when top is moving right and incoming is coming left
+            while (!res.empty() && res.back() > 0 && asteroid < 0)
             {
-                if (fs.top() < abs(asteroid)) // incoming is big
+                if (res.back() < abs(asteroid))
                 {
-                    fs.pop();
+                    res.pop_back();
                     continue;
                 }
-                else if (fs.top() == abs(asteroid)) // same both explodes
+                else if (abs(asteroid) == res.back())
                 {
-                    fs.pop();
+                    res.pop_back();
                     boom = true;
                     break;
                 }
                 else
-                { // incoming small it explodes
+                {
                     boom = true;
                     break;
                 }
             }
+
             if (!boom)
-            {
-                fs.push(asteroid);
-            }
+                res.push_back(asteroid);
         }
-
-        vector<int> res;
-        while (!fs.empty())
-        {
-            res.push_back(fs.top());
-            fs.pop();
-        }
-        reverse(res.begin(), res.end());
-
         return res;
     }
 };
