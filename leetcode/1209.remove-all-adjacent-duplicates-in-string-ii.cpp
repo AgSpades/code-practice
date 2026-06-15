@@ -65,31 +65,27 @@ class Solution
 public:
     string removeDuplicates(string s, int k)
     {
-        string foo;
+        vector<pair<char, int>> stack;
         for (char c : s)
         {
-            foo.push_back(c);
-            if (foo.length() >= k)
+            if (stack.empty() || stack.back().first != c)
             {
-                //check last k elements
-                int p = foo.size()-k;
-                bool l = true;
-                for(int i = foo.size()-1;i>=p;i--){
-                    if(foo[i]!=c){
-                        l=false;
-                        break;
-                    }
-                }
-                if(l){
-                    for(int i=0;i<k;i++){
-                        foo.pop_back();
-                    }
-                }
-                
+                stack.push_back({c, 0});
+            }
+            // increment count since one encountered
+            if (++stack.back().second == k)
+            {
+                stack.pop_back();
             }
         }
 
-        return foo;
+        string res;
+        for (auto el : stack)
+        {
+            res.append(el.second, el.first);
+        }
+
+        return res;
     }
 };
 // @lc code=end
