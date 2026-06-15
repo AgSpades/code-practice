@@ -1,8 +1,9 @@
 # Code Practice
 
-A repo containing the CP problems I have solved so far.
+A repo containing some of the CP problems I have solved so far. 
 Sites include:
 
+- leetcode
 - codeforces
 - codechef
 - atcoder
