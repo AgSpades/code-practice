@@ -15,10 +15,8 @@ public:
         for (int n : nums)
         {
             minH.push(n);
-        }
-        for (int i = 0; i < nums.size() - k; i++)
-        {
-            minH.pop();
+            if (minH.size() > k)
+                minH.pop();
         }
 
         return minH.top();
