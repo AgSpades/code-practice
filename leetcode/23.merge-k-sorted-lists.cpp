@@ -20,39 +20,42 @@ using namespace std;
 class Solution
 {
 public:
-    ListNode *mergeKLists(vector<ListNode *> &lists)
+    struct minHeapComparator
     {
-        // In O(nlogn)
-        vector<ListNode *> nodes;
+        bool operator()(ListNode *a, ListNode *b)
+        {
+            return a->val > b->val;
+        }
+    };
 
-        // 1. Collect all node pointers from all lists
+    ListNode *
+    mergeKLists(vector<ListNode *> &lists)
+    {
+        // In O(nlogk)
+        priority_queue<ListNode *, vector<ListNode *>, minHeapComparator> minH;
         for (auto list : lists)
         {
-            ListNode *temp = list;
-            while (temp != nullptr)
-            { 
-                nodes.push_back(temp);
-                temp = temp->next;
+            if (list)
+            {
+                minH.push(list);
+            }
+        }
+        ListNode d(0);
+        ListNode *t = &d;
+        while (!minH.empty())
+        {
+            ListNode *curr = minH.top(); // smallest element
+            minH.pop();
+            t->next = curr; // append the small to our res
+            t = t->next;    // move the tail
+            // extracted node has a next element
+            if (curr->next != nullptr)
+            {
+                minH.push(curr->next);
             }
         }
 
-        // If there are no elements, return null
-        if (nodes.empty())
-            return nullptr;
-
-        // 2. Sort the nodes based on their value
-        sort(nodes.begin(), nodes.end(), [](ListNode *a, ListNode *b)
-             { return a->val < b->val; });
-
-        // 3. Re-link the sorted nodes together
-        for (int i = 0; i < (int)nodes.size() - 1; i++)
-        {
-            nodes[i]->next = nodes[i + 1];
-        }
-        nodes.back()->next = nullptr; // Terminate the final node
-
-        // Return the first node in our sorted array
-        return nodes[0];
+        return d.next;
     }
 };
 // @lc code=end
