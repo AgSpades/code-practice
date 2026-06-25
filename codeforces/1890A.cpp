@@ -27,27 +27,26 @@ inline void solve()
 {
     int n;
     cin >> n;
-    map<int, int> mp;
+    int b1 = 0, b2 = 0, cb1 = 0, cb2 = 0;
     FOR(i, 0, n)
     {
-        int x;
-        cin >> x;
-        mp[x]++;
-    }
-
-    if (mp.size() >= 3)
-        puts("No");
-    else
-    {
-        if (std::abs(mp.begin()->second - mp.rbegin()->second) <= 1)
+        int temp;
+        cin >> temp;
+        if (b1 == 0 || b1 == temp)
         {
-            puts("Yes");
+            b1 = temp;
+            cb1++;
         }
-        else
+        else if (b2 == 0 || b2 == temp)
         {
-            puts("No");
+            b2 = temp;
+            cb2++;
         }
     }
+    puts(
+        cb1 == n                                  ? "Yes" // single element
+        : (cb1 + cb2 == n && abs(cb1 - cb2) <= 1) ? "Yes"
+                                                  : "No");
 }
 
 int main()
