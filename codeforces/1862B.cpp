@@ -2,7 +2,7 @@
 Jai Bajrangbali!
 template_author: agspades
 year of code: 2026
-template version: 0.1.5
+template version: 0.1.4
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -18,7 +18,6 @@ using namespace std;
 #define pb push_back
 #define vi vector<int>
 #define vvi vector<vector<int>>
-#define endl '\n'
 #define all(x) (x).begin(), (x).end()
 #define FOR(i, a, b) for (int i = a; i < b; i++)
 template <typename T>
@@ -39,6 +38,25 @@ const int INF = 1e18;
 
 inline void solve()
 {
+    int n;
+    cin >> n;
+    vi ans;
+    FOR(i, 0, n)
+    {
+        int a;
+        cin >> a;
+        if (i && ans.back() > a)
+        {
+            ans.pb(1);
+        }
+        ans.pb(a);
+    }
+    cout << ans.size() << '\n';
+    for (int e : ans)
+    {
+        cout << e << ' ';
+    }
+    cout << '\n';
 }
 
 int32_t main()
